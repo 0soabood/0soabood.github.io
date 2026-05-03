@@ -18,3 +18,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.claude/CLAUDE.md
+.claude/hooks/
+.claude/settings.json
+.vscode/
+.claude/CLAUDE1.md
