@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_0_so_abood=self.webpackChunk_0_so_abood||[]).push([["129"],{8322(o){o.exports=JSON.parse('{"authors":[{"name":"0soAbood","socials":{"github":"https://github.com/Lorchissimo"},"imageURL":"https://github.com/Lorchissimo.png","key":"abood","page":null,"count":2}]}')}}]);
