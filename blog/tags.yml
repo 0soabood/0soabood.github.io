@@ -2,3 +2,53 @@ general:
   label: General
   permalink: /general
   description: General posts
+
+web:
+  label: Web
+  permalink: /web
+  description: Web development and frontend topics
+
+tutorial:
+  label: Tutorial
+  permalink: /tutorial
+  description: Step-by-step guides and walkthroughs
+
+architecture:
+  label: Architecture
+  permalink: /architecture
+  description: Software architecture and system design
+
+electron:
+  label: Electron
+  permalink: /electron
+  description: Electron desktop app development
+
+typescript:
+  label: TypeScript
+  permalink: /typescript
+  description: TypeScript development
+
+multi-agent:
+  label: Multi-Agent
+  permalink: /multi-agent
+  description: Multi-agent AI systems
+
+langgraph:
+  label: LangGraph
+  permalink: /langgraph
+  description: LangGraph orchestration
+
+react:
+  label: React
+  permalink: /react
+  description: React development
+
+local-first:
+  label: Local-First
+  permalink: /local-first
+  description: Local-first software and offline-capable apps
+
+AI:
+  label: AI
+  permalink: /ai
+  description: Artificial intelligence and LLMs
