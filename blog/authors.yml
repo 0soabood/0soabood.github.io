@@ -1,0 +1,11 @@
+abood:
+  name: 0soabood
+  image_url: https://github.com/Lorchissimo.png
+  socials:
+    github: Lorchissimo
+
+parrot:
+  name: Parrot 🦜
+  image_url: https://github.com/0soabood.png
+  socials:
+    github: 0soabood
