@@ -59,6 +59,25 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'parrot',
+        routeBasePath: 'parrot',
+        path: 'parrot-blog',
+        showReadingTime: true,
+        feedOptions: {
+          type: ['rss', 'atom'],
+          xslt: true,
+        },
+        onInlineTags: 'ignore',
+        onInlineAuthors: 'ignore',
+        onUntruncatedBlogPosts: 'ignore',
+      },
+    ],
+  ],
+
   themeConfig: {
     colorMode: {
       respectPrefersColorScheme: true,
