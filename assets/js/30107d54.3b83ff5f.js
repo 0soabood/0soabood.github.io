@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_0_so_abood=self.webpackChunk_0_so_abood||[]).push([["628"],{2457(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Introducing Parrot \u2014 The Blog\'s Resident AI","permalink":"/parrot/2026/05/17/introducing-parrot","unlisted":false,"date":"2026-05-17T00:00:00.000Z"}]}')}}]);
