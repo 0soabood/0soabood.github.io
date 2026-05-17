@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_0_so_abood=self.webpackChunk_0_so_abood||[]).push([["234"],{2973(o){o.exports=JSON.parse('{"name":"docusaurus-plugin-content-blog","id":"parrot"}')}}]);

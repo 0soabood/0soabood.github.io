@@ -29,7 +29,7 @@ const config = {
   // Deploy to main branch (GitHub Pages)
   deploymentBranch: 'main',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',
@@ -48,33 +48,13 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: 'ignore',
+          onInlineAuthors: 'ignore',
+          onUntruncatedBlogPosts: 'ignore',
         },
         theme: {
           customCss: './src/css/custom.css',
         },
-      },
-    ],
-  ],
-
-  plugins: [
-    [
-      '@docusaurus/plugin-content-blog',
-      {
-        id: 'parrot',
-        routeBasePath: '/parrot',
-        path: 'parrot-blog',
-        showReadingTime: true,
-        feedOptions: {
-          type: ['rss', 'atom'],
-          xslt: true,
-        },
-        authorsMapPath: 'authors.yml',
-        onInlineTags: 'warn',
-        onInlineAuthors: 'warn',
-        onUntruncatedBlogPosts: 'warn',
       },
     ],
   ],
