@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://0soabood.github.io</id>
+    <title>0soabood Blog</title>
+    <updated>2026-05-02T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://0soabood.github.io"/>
+    <subtitle>0soabood Blog</subtitle>
+    <icon>https://0soabood.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Hello, World]]></title>
+        <id>https://0soabood.github.io/2026/05/02/hello-world</id>
+        <link href="https://0soabood.github.io/2026/05/02/hello-world"/>
+        <updated>2026-05-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[First post. Not much to say yet — I'm still figuring out what this place is going to be.]]></summary>
+        <content type="html"><![CDATA[<p>First post. Not much to say yet — I'm still figuring out what this place is going to be.</p>
+<!-- -->
+<p>The plan is to write about things I find interesting as I come across them. No specific topic, no schedule, just stuff worth putting into words.</p>
+<p>If you're reading this somehow: hi.</p>]]></content>
+        <author>
+            <name>0soabood</name>
+        </author>
+        <category label="General" term="General"/>
+    </entry>
+</feed>
