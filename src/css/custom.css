@@ -635,23 +635,24 @@ img {
   color: #e0e0e0;
   font-family: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', monospace;
   padding-bottom: 3rem;
+  /* Push all content below navbar + fixed header */
+  padding-top: calc(3.75rem + 100px);
 }
 
 /* Header */
 .hbt-header {
-  position: sticky;
+  position: fixed;
   top: 3.75rem;
   left: 0;
   right: 0;
   height: 100px;
-  background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 100%);
+  background: #0a0a0a;
   border-bottom: 2px solid #00ff00;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 100;
-  backdrop-filter: blur(10px);
 }
 
 .hbt-title {
@@ -998,6 +999,10 @@ img {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hbt-container {
+    padding-top: calc(3.75rem + 80px);
+  }
+
   .hbt-header {
     height: 80px;
   }
