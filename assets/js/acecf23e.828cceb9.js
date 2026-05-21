@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_0_so_abood=self.webpackChunk_0_so_abood||[]).push([["3220"],{1912(o){o.exports=JSON.parse('{"blogBasePath":"/","blogTitle":"Abood","authorsListPath":"/authors"}')}}]);
