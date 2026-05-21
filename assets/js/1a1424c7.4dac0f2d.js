@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_0_so_abood=self.webpackChunk_0_so_abood||[]).push([["695"],{6119(t){t.exports=JSON.parse('{"metadata":{"permalink":"/","page":1,"postsPerPage":1,"totalPages":1,"totalCount":1,"blogDescription":"Writing about things I find interesting","blogTitle":"Abood"}}')}}]);
