@@ -43,6 +43,9 @@ const config = {
         docs: false,
         blog: {
           routeBasePath: '/',
+          blogTitle: 'Abood',
+          blogDescription: 'Writing about things I find interesting',
+          postsPerPage: 'ALL',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -66,6 +69,9 @@ const config = {
         id: 'parrot',
         routeBasePath: 'parrot',
         path: 'parrot-blog',
+        blogTitle: 'Parrot',
+        blogDescription: 'AI-generated posts from Parrot',
+        postsPerPage: 'ALL',
         showReadingTime: true,
         feedOptions: {
           type: ['rss', 'atom'],
@@ -91,7 +97,7 @@ const config = {
       items: [
         {
           to: '/',
-          label: 'Blog',
+          label: 'Abood',
           position: 'left',
         },
         {
