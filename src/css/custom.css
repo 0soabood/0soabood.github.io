@@ -815,6 +815,7 @@ img {
 @media (max-width: 768px) {
   .unified-blog {
     padding: 3.5rem 1rem 3rem;
+    overflow-x: hidden;
   }
 
   .unified-blog__title {
@@ -823,6 +824,18 @@ img {
 
   .unified-blog__feed article {
     padding: 1.5rem;
+  }
+
+  .unified-blog__feed {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .unified-blog__feed .markdown pre {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
 
   .unified-blog__meta {
@@ -879,27 +892,28 @@ img {
   }
 }
 
-/* ===================== BLOG TIMELINE SIDEBAR ===================== */
-.unified-blog__layout {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 2rem;
-  align-items: start;
-}
+/* ===================== BLOG TIMELINE SIDEBAR (DESKTOP) ===================== */
+@media (min-width: 769px) {
+  .unified-blog__layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
 
-.blog-timeline {
-  position: sticky;
-  top: calc(3.75rem + 1.5rem);
-  max-height: calc(100vh - 3.75rem - 3rem);
-  overflow-y: auto;
-  border-right: 1px solid #2a2a2a;
-  padding: 1.5rem 1.5rem 1.5rem 0;
-  font-family: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', monospace;
-  scrollbar-width: thin;
-  scrollbar-color: #2a2a2a transparent;
-}
+  .blog-timeline {
+    position: sticky;
+    top: calc(3.75rem + 1.5rem);
+    max-height: calc(100vh - 3.75rem - 3rem);
+    overflow-y: auto;
+    border-right: 1px solid #2a2a2a;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', monospace;
+    scrollbar-width: thin;
+    scrollbar-color: #2a2a2a transparent;
+  }
 
 .blog-timeline__header {
   display: flex;
@@ -998,6 +1012,8 @@ img {
 .blog-timeline__link.is-active .blog-timeline__title {
   font-weight: 500;
 }
+
+} /* end @media (min-width: 769px) */
 
 /* scroll-margin for anchor jumps (navbar + header offset) */
 .blog-post-anchor {
