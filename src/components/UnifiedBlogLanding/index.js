@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -63,8 +63,6 @@ function TimelineSidebar({items, isParrotBlog}) {
       setActiveId(id);
     }
   };
-
-  if (items.length <= 1) return null;
 
   return (
     <aside className="blog-timeline">
