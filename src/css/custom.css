@@ -629,6 +629,30 @@ img {
 }
 
 /* ===================== UNIFIED BLOG LANDING ===================== */
+/* Neutralize standard blog-list-page styles on unified pages */
+.unified-blog-page.blog-list-page .container {
+  max-width: none;
+}
+
+.unified-blog-page.blog-list-page article {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+.unified-blog-page.blog-list-page article:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.unified-blog-page .pagination-nav {
+  display: none;
+}
+
 .unified-blog-page body {
   background: #0a0a0a;
   color: #e0e0e0;
