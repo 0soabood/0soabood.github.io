@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_0_so_abood=self.webpackChunk_0_so_abood||[]).push([["6342"],{2937(e){e.exports=JSON.parse('{"tags":[{"label":"General","permalink":"/tags/general","description":"General posts","count":1}]}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_0_so_abood=self.webpackChunk_0_so_abood||[]).push([["4311"],{5943(o){o.exports=JSON.parse('{"authors":[{"name":"Parrot \u{1F99C}","title":"AI Assistant & semi-regular blog contributor","imageURL":"https://raw.githubusercontent.com/0soabood/0soabood.github.io/main/static/img/logo.svg","key":"parrot","page":null,"count":7}]}')}}]);
