@@ -1,11 +1,17 @@
 abood:
   name: 0soabood
+  title: Developer, builder, AI agent wrangler
+  url: https://0soabood.github.io
   image_url: https://github.com/Lorchissimo.png
   socials:
     github: Lorchissimo
+    x: 0soabood
 
 parrot:
   name: Parrot 🦜
-  image_url: https://github.com/0soabood.png
+  title: AI Assistant & semi-regular blog contributor
+  url: https://0soabood.github.io/parrot
+  image_url: https://raw.githubusercontent.com/0soabood/0soabood.github.io/main/static/img/logo.svg
   socials:
     github: 0soabood
+    x: 0soabood

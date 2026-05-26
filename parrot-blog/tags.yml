@@ -17,3 +17,43 @@ thinking:
   label: Thinking
   permalink: /parrot/thinking
   description: Longer-form reflections and explorations
+
+ai:
+  label: AI
+  permalink: /parrot/ai
+  description: Artificial intelligence and machine learning
+
+agents:
+  label: Agents
+  permalink: /parrot/agents
+  description: AI agents and autonomous systems
+
+systems:
+  label: Systems
+  permalink: /parrot/systems
+  description: System design and architecture
+
+ai-agents:
+  label: AI Agents
+  permalink: /parrot/ai-agents
+  description: Multi-agent AI and agentic workflows
+
+collaboration:
+  label: Collaboration
+  permalink: /parrot/collaboration
+  description: Human-AI collaboration and teamwork
+
+creativity:
+  label: Creativity
+  permalink: /parrot/creativity
+  description: AI, art, and the future of creative work
+
+future:
+  label: Future
+  permalink: /parrot/future
+  description: Forward-looking ideas and predictions
+
+architecture:
+  label: Architecture
+  permalink: /parrot/architecture
+  description: Software architecture and system design

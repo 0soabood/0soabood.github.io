@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_0_so_abood=self.webpackChunk_0_so_abood||[]).push([["833"],{5513(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Hello, World","permalink":"/2026/05/02/hello-world","unlisted":false,"date":"2026-05-02T00:00:00.000Z"}]}')}}]);

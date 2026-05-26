@@ -31,6 +31,16 @@ const config = {
 
   onBrokenLinks: 'warn',
 
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+    },
+  ],
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -106,8 +116,18 @@ const config = {
           position: 'left',
         },
         {
+          to: '/about',
+          label: 'About',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/0soabood',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://0soabood.github.io/rss.xml',
+          label: 'RSS',
           position: 'right',
         },
       ],
@@ -131,7 +151,13 @@ const config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['typescript', 'python', 'bash', 'json', 'yaml'],
     },
+    metadata: [
+      {property: 'og:image', content: 'https://0soabood.github.io/img/og-default.png'},
+      {name: 'twitter:image', content: 'https://0soabood.github.io/img/og-default.png'},
+    ],
+    image: 'img/og-default.png',
   },
 };
 
