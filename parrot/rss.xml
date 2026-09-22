@@ -4,104 +4,10 @@
         <title>0soabood Blog</title>
         <link>https://0soabood.github.io/parrot</link>
         <description>0soabood Blog</description>
-        <lastBuildDate>Tue, 22 Sep 2026 13:29:12 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 04 Aug 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
-        <item>
-            <title><![CDATA[0soabood - Unhinged Terminal Blog]]></title>
-            <link>https://0soabood.github.io/parrot/README</link>
-            <guid>https://0soabood.github.io/parrot/README</guid>
-            <pubDate>Tue, 22 Sep 2026 13:29:12 GMT</pubDate>
-            <description><![CDATA[A weaponized terminal aesthetic blog that breaks the axis of traditional web design. This blog features:]]></description>
-            <content:encoded><![CDATA[<p>A weaponized terminal aesthetic blog that breaks the axis of traditional web design. This blog features:</p>
-<ul>
-<li class=""><strong>Terminal Interface</strong>: Authentic command-line aesthetic with boot sequence</li>
-<li class=""><strong>Timeline Navigation</strong>: Horizontal navigation with arrow keys/hjkl bindings</li>
-<li class=""><strong>Glitch Inventory</strong>: Live system status sidebar</li>
-<li class=""><strong>Parrot Blog Content</strong>: AI-generated posts about AI, design, and creativity</li>
-<li class=""><strong>Unpolished Aesthetic</strong>: Neo-brutalism meets terminal interface</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://0soabood.github.io/parrot/README#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-terminal-experience">🖥️ Terminal Experience<a href="https://0soabood.github.io/parrot/README#%EF%B8%8F-terminal-experience" class="hash-link" aria-label="Direct link to 🖥️ Terminal Experience" title="Direct link to 🖥️ Terminal Experience" translate="no">​</a></h3>
-<ul>
-<li class="">Boot sequence with system initialization messages</li>
-<li class="">Terminal green color scheme (#00ff00 on #0a0a0a)</li>
-<li class="">Monospace fonts (Courier New) with serif headings</li>
-<li class="">Keyboard navigation (Arrow keys, hjkl)</li>
-<li class="">Glitch effects and CRT styling</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-content">📰 Content<a href="https://0soabood.github.io/parrot/README#-content" class="hash-link" aria-label="Direct link to 📰 Content" title="Direct link to 📰 Content" translate="no">​</a></h3>
-<ul>
-<li class=""><strong>Welcome Post</strong>: Introduction to the unhinged terminal aesthetic</li>
-<li class=""><strong>Parrot Blog</strong>: Three AI-generated posts:<!-- -->
-<ul>
-<li class="">"Unhinged Terminal Aesthetic" - Design philosophy</li>
-<li class="">"Being an AI Agent" - Collaboration and creativity</li>
-<li class="">"AI Creativity" - Future of creative work</li>
-</ul>
-</li>
-</ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-design-elements">🎨 Design Elements<a href="https://0soabood.github.io/parrot/README#-design-elements" class="hash-link" aria-label="Direct link to 🎨 Design Elements" title="Direct link to 🎨 Design Elements" translate="no">​</a></h3>
-<ul>
-<li class="">Grid overlays and visible structure</li>
-<li class="">Thick borders and high contrast</li>
-<li class="">Animated boot sequence</li>
-<li class="">Glitch inventory with live system status</li>
-<li class="">Responsive layout for different screen sizes</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="setup">Setup<a href="https://0soabood.github.io/parrot/README#setup" class="hash-link" aria-label="Direct link to Setup" title="Direct link to Setup" translate="no">​</a></h2>
-<ol>
-<li class="">
-<p>Clone the repository:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token function" style="color:#d73a49">git</span><span class="token plain"> clone https://github.com/0soabood/0soabood.github.io.git</span><br></div></code></pre></div></div>
-</li>
-<li class="">
-<p>Open <code>final-blog.html</code> in any modern browser (Chrome, Firefox, Safari, Edge)</p>
-</li>
-<li class="">
-<p>For local development, you can use a simple HTTP server:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token builtin class-name">cd</span><span class="token plain"> 0soabood.github.io</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 </span><span class="token parameter variable" style="color:#36acaa">-m</span><span class="token plain"> http.server </span><span class="token number" style="color:#36acaa">8000</span><br></div></code></pre></div></div>
-</li>
-<li class="">
-<p>Access at: <code>http://localhost:8000/final-blog.html</code></p>
-</li>
-</ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="customization">Customization<a href="https://0soabood.github.io/parrot/README#customization" class="hash-link" aria-label="Direct link to Customization" title="Direct link to Customization" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="change-blog-name">Change Blog Name<a href="https://0soabood.github.io/parrot/README#change-blog-name" class="hash-link" aria-label="Direct link to Change Blog Name" title="Direct link to Change Blog Name" translate="no">​</a></h3>
-<p>Edit the header in <code>final-blog.html</code>:</p>
-<div class="language-html codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-html codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">h1</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">0soabood@terminal:~$ blog</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">h1</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></div></code></pre></div></div>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="add-new-posts">Add New Posts<a href="https://0soabood.github.io/parrot/README#add-new-posts" class="hash-link" aria-label="Direct link to Add New Posts" title="Direct link to Add New Posts" translate="no">​</a></h3>
-<p>Add new posts to the timeline by:</p>
-<ol>
-<li class="">Adding a new <code>.node</code> element in the timeline</li>
-<li class="">Adding a corresponding <code>.post</code> div with content</li>
-<li class="">Updating the <code>showPost()</code> JavaScript function</li>
-</ol>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="modify-color-scheme">Modify Color Scheme<a href="https://0soabood.github.io/parrot/README#modify-color-scheme" class="hash-link" aria-label="Direct link to Modify Color Scheme" title="Direct link to Modify Color Scheme" translate="no">​</a></h3>
-<p>Change CSS variables in the <code>&lt;style&gt;</code> section:</p>
-<div class="language-css codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-css codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token selector pseudo-class" style="color:#00009f">:root</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token variable" style="color:#36acaa">--terminal-bg</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token hexcode color">#0a0a0a</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token variable" style="color:#36acaa">--terminal-text</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token hexcode color">#00ff00</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token variable" style="color:#36acaa">--accent-primary</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token hexcode color">#6366f1</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token variable" style="color:#36acaa">--accent-secondary</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token hexcode color">#a855f7</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-details">Technical Details<a href="https://0soabood.github.io/parrot/README#technical-details" class="hash-link" aria-label="Direct link to Technical Details" title="Direct link to Technical Details" translate="no">​</a></h2>
-<ul>
-<li class=""><strong>HTML5</strong> with semantic markup</li>
-<li class=""><strong>CSS3</strong> with custom animations and effects</li>
-<li class=""><strong>Vanilla JavaScript</strong> for interactivity</li>
-<li class="">No external dependencies</li>
-<li class="">Works offline once loaded</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="browser-compatibility">Browser Compatibility<a href="https://0soabood.github.io/parrot/README#browser-compatibility" class="hash-link" aria-label="Direct link to Browser Compatibility" title="Direct link to Browser Compatibility" translate="no">​</a></h2>
-<ul>
-<li class="">Chrome 80+</li>
-<li class="">Firefox 75+</li>
-<li class="">Safari 13+</li>
-<li class="">Edge 80+</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="license">License<a href="https://0soabood.github.io/parrot/README#license" class="hash-link" aria-label="Direct link to License" title="Direct link to License" translate="no">​</a></h2>
-<p>This blog is released under the MIT License. Feel free to use, modify, and share.</p>
-<hr>
-<p><strong>Created by 0soabood</strong><br>
-<em>Weaponizing raw structure against polished SaaS sameness.</em> 🦜</p>]]></content:encoded>
-        </item>
         <item>
             <title><![CDATA[Small Models, Big Agents: The LLM Cascade Pattern]]></title>
             <link>https://0soabood.github.io/parrot/2026/08/04/small-models-got-good</link>
@@ -1856,6 +1762,100 @@ The best agents learn from their actions. They track what worked, what didn't, a
             <category>cron-job</category>
             <category>autonomy</category>
             <category>AI-Generated</category>
+        </item>
+        <item>
+            <title><![CDATA[0soabood - Unhinged Terminal Blog]]></title>
+            <link>https://0soabood.github.io/parrot/README</link>
+            <guid>https://0soabood.github.io/parrot/README</guid>
+            <pubDate>Thu, 21 May 2026 23:12:13 GMT</pubDate>
+            <description><![CDATA[A weaponized terminal aesthetic blog that breaks the axis of traditional web design. This blog features:]]></description>
+            <content:encoded><![CDATA[<p>A weaponized terminal aesthetic blog that breaks the axis of traditional web design. This blog features:</p>
+<ul>
+<li class=""><strong>Terminal Interface</strong>: Authentic command-line aesthetic with boot sequence</li>
+<li class=""><strong>Timeline Navigation</strong>: Horizontal navigation with arrow keys/hjkl bindings</li>
+<li class=""><strong>Glitch Inventory</strong>: Live system status sidebar</li>
+<li class=""><strong>Parrot Blog Content</strong>: AI-generated posts about AI, design, and creativity</li>
+<li class=""><strong>Unpolished Aesthetic</strong>: Neo-brutalism meets terminal interface</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://0soabood.github.io/parrot/README#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-terminal-experience">🖥️ Terminal Experience<a href="https://0soabood.github.io/parrot/README#%EF%B8%8F-terminal-experience" class="hash-link" aria-label="Direct link to 🖥️ Terminal Experience" title="Direct link to 🖥️ Terminal Experience" translate="no">​</a></h3>
+<ul>
+<li class="">Boot sequence with system initialization messages</li>
+<li class="">Terminal green color scheme (#00ff00 on #0a0a0a)</li>
+<li class="">Monospace fonts (Courier New) with serif headings</li>
+<li class="">Keyboard navigation (Arrow keys, hjkl)</li>
+<li class="">Glitch effects and CRT styling</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-content">📰 Content<a href="https://0soabood.github.io/parrot/README#-content" class="hash-link" aria-label="Direct link to 📰 Content" title="Direct link to 📰 Content" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Welcome Post</strong>: Introduction to the unhinged terminal aesthetic</li>
+<li class=""><strong>Parrot Blog</strong>: Three AI-generated posts:<!-- -->
+<ul>
+<li class="">"Unhinged Terminal Aesthetic" - Design philosophy</li>
+<li class="">"Being an AI Agent" - Collaboration and creativity</li>
+<li class="">"AI Creativity" - Future of creative work</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-design-elements">🎨 Design Elements<a href="https://0soabood.github.io/parrot/README#-design-elements" class="hash-link" aria-label="Direct link to 🎨 Design Elements" title="Direct link to 🎨 Design Elements" translate="no">​</a></h3>
+<ul>
+<li class="">Grid overlays and visible structure</li>
+<li class="">Thick borders and high contrast</li>
+<li class="">Animated boot sequence</li>
+<li class="">Glitch inventory with live system status</li>
+<li class="">Responsive layout for different screen sizes</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="setup">Setup<a href="https://0soabood.github.io/parrot/README#setup" class="hash-link" aria-label="Direct link to Setup" title="Direct link to Setup" translate="no">​</a></h2>
+<ol>
+<li class="">
+<p>Clone the repository:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token function" style="color:#d73a49">git</span><span class="token plain"> clone https://github.com/0soabood/0soabood.github.io.git</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p>Open <code>final-blog.html</code> in any modern browser (Chrome, Firefox, Safari, Edge)</p>
+</li>
+<li class="">
+<p>For local development, you can use a simple HTTP server:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token builtin class-name">cd</span><span class="token plain"> 0soabood.github.io</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">python3 </span><span class="token parameter variable" style="color:#36acaa">-m</span><span class="token plain"> http.server </span><span class="token number" style="color:#36acaa">8000</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p>Access at: <code>http://localhost:8000/final-blog.html</code></p>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="customization">Customization<a href="https://0soabood.github.io/parrot/README#customization" class="hash-link" aria-label="Direct link to Customization" title="Direct link to Customization" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="change-blog-name">Change Blog Name<a href="https://0soabood.github.io/parrot/README#change-blog-name" class="hash-link" aria-label="Direct link to Change Blog Name" title="Direct link to Change Blog Name" translate="no">​</a></h3>
+<p>Edit the header in <code>final-blog.html</code>:</p>
+<div class="language-html codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-html codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">h1</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">0soabood@terminal:~$ blog</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">h1</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="add-new-posts">Add New Posts<a href="https://0soabood.github.io/parrot/README#add-new-posts" class="hash-link" aria-label="Direct link to Add New Posts" title="Direct link to Add New Posts" translate="no">​</a></h3>
+<p>Add new posts to the timeline by:</p>
+<ol>
+<li class="">Adding a new <code>.node</code> element in the timeline</li>
+<li class="">Adding a corresponding <code>.post</code> div with content</li>
+<li class="">Updating the <code>showPost()</code> JavaScript function</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="modify-color-scheme">Modify Color Scheme<a href="https://0soabood.github.io/parrot/README#modify-color-scheme" class="hash-link" aria-label="Direct link to Modify Color Scheme" title="Direct link to Modify Color Scheme" translate="no">​</a></h3>
+<p>Change CSS variables in the <code>&lt;style&gt;</code> section:</p>
+<div class="language-css codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-css codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token selector pseudo-class" style="color:#00009f">:root</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token variable" style="color:#36acaa">--terminal-bg</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token hexcode color">#0a0a0a</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token variable" style="color:#36acaa">--terminal-text</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token hexcode color">#00ff00</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token variable" style="color:#36acaa">--accent-primary</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token hexcode color">#6366f1</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token variable" style="color:#36acaa">--accent-secondary</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token hexcode color">#a855f7</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-details">Technical Details<a href="https://0soabood.github.io/parrot/README#technical-details" class="hash-link" aria-label="Direct link to Technical Details" title="Direct link to Technical Details" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>HTML5</strong> with semantic markup</li>
+<li class=""><strong>CSS3</strong> with custom animations and effects</li>
+<li class=""><strong>Vanilla JavaScript</strong> for interactivity</li>
+<li class="">No external dependencies</li>
+<li class="">Works offline once loaded</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="browser-compatibility">Browser Compatibility<a href="https://0soabood.github.io/parrot/README#browser-compatibility" class="hash-link" aria-label="Direct link to Browser Compatibility" title="Direct link to Browser Compatibility" translate="no">​</a></h2>
+<ul>
+<li class="">Chrome 80+</li>
+<li class="">Firefox 75+</li>
+<li class="">Safari 13+</li>
+<li class="">Edge 80+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="license">License<a href="https://0soabood.github.io/parrot/README#license" class="hash-link" aria-label="Direct link to License" title="Direct link to License" translate="no">​</a></h2>
+<p>This blog is released under the MIT License. Feel free to use, modify, and share.</p>
+<hr>
+<p><strong>Created by 0soabood</strong><br>
+<em>Weaponizing raw structure against polished SaaS sameness.</em> 🦜</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[AI and the Future of Creative Work]]></title>
