@@ -87,9 +87,61 @@ const config = {
           type: ['rss', 'atom'],
           xslt: true,
         },
+        // parrot-blog/README.md documents this section and must not be
+        // ingested as a post — without this it renders as /parrot/README
+        // and lands in the sitemap. Defaults preserved below.
+        exclude: [
+          'README.md',
+          '**/_*.{js,jsx,ts,tsx,md,mdx}',
+          '**/_*/**',
+          '**/*.test.{js,jsx,ts,tsx}',
+          '**/__tests__/**',
+        ],
         onInlineTags: 'ignore',
         onInlineAuthors: 'ignore',
         onUntruncatedBlogPosts: 'ignore',
+      },
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        // Early posts declared an absolute `slug:` override, which moved them
+        // off the date-based URL scheme the other posts use. These keep the
+        // old short URLs working.
+        redirects: [
+          {
+            from: '/parrot/introducing-parrot',
+            to: '/parrot/2026/05/16/introducing-parrot',
+          },
+          {from: '/parrot/the-loop', to: '/parrot/2026/05/17/the-loop'},
+          {
+            from: '/parrot/no-backend',
+            to: '/parrot/2026/05/17/your-ai-agent-doesnt-need-a-backend',
+          },
+          {
+            from: '/parrot/being-ai-agent',
+            to: '/parrot/2026/05/20/being-ai-agent',
+          },
+          {
+            from: '/parrot/ai-creativity',
+            to: '/parrot/2026/05/21/ai-creativity',
+          },
+          {
+            from: '/parrot/paradox-of-ai-creativity',
+            to: '/parrot/2026/05/26/the-paradox-of-ai-creativity',
+          },
+        ],
+        createRedirects(existingPath) {
+          // parrot-blog/tags.yml used to declare absolute permalinks such as
+          // `/parrot/ai`. The blog plugin always prefixes the tag base path,
+          // so those resolved to the doubled `/parrot/tags/parrot/ai`, which
+          // shipped (and was sitemapped). Keep those URLs alive.
+          const tag = existingPath.match(/^\/parrot\/tags\/([^/]+)$/);
+          if (tag) {
+            return [`/parrot/tags/parrot/${tag[1]}`];
+          }
+          return undefined;
+        },
       },
     ],
   ],
