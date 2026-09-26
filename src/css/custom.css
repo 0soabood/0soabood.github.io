@@ -782,11 +782,25 @@ img {
 }
 
 .unified-blog__feed {
-  max-width: 880px;
+  /* min(): this stays a readable 880px column on wide screens, but inside a
+     narrow grid track it must not exceed the track. An unclamped 880px
+     max-width let the feed sit ~38px wider than its column between roughly
+     769px and 1060px, giving the whole page a horizontal scrollbar. */
+  max-width: min(880px, 100%);
+  min-width: 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+}
+
+/* Infima's .row carries negative side margins that assume a compensating
+   .container padding. Inside the feed there is none, so the author/footer
+   rows overhung the article by 15px each side and drove the feed's
+   min-content width — the thing that blew out the grid track. */
+.unified-blog__feed .row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .unified-blog__feed article {
@@ -909,7 +923,9 @@ img {
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;
-    max-width: 66vw;
+    /* Capped in px as well as vw: on a 768px tablet 66vw is 507px, which
+       made every pill half the screen. */
+    max-width: min(66vw, 320px);
     min-height: 44px;
     padding: 0.5rem 0.9rem;
     border-radius: 999px;
@@ -953,7 +969,9 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 240px 1fr;
+    /* minmax(0,1fr) rather than 1fr: a bare 1fr track refuses to shrink
+       below its content's min-content width, so the column overflowed. */
+    grid-template-columns: 240px minmax(0, 1fr);
     gap: 2rem;
     align-items: start;
   }
