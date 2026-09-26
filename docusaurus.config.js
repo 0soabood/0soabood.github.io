@@ -168,11 +168,6 @@ const config = {
           position: 'left',
         },
         {
-          to: '/about',
-          label: 'About',
-          position: 'left',
-        },
-        {
           href: 'https://github.com/0soabood',
           label: 'GitHub',
           position: 'right',
