@@ -87,9 +87,10 @@ const config = {
           type: ['rss', 'atom'],
           xslt: true,
         },
-        // parrot-blog/README.md documents this section and must not be
-        // ingested as a post — without this it renders as /parrot/README
-        // and lands in the sitemap. Defaults preserved below.
+        // Every .md/.mdx in this directory is ingested as a post, so a stray
+        // README dropped in here renders as /parrot/README and lands in the
+        // sitemap. The old README has been deleted, but keep this entry as a
+        // guard — it costs nothing and this trap has bitten before.
         exclude: [
           'README.md',
           '**/_*.{js,jsx,ts,tsx,md,mdx}',
