@@ -24,19 +24,26 @@ function getBlogCount(blogData, fallback) {
 function TimelineSidebar({items, isParrotBlog}) {
   const [activeId, setActiveId] = useState(null);
   const linkRefs = useRef({});
+  const navRef = useRef(null);
 
-  // Keep the active pill in view. On mobile this nav scrolls horizontally, so
-  // the post you are reading can be far off-screen with no visual feedback.
-  // block:'nearest' prevents this from yanking the page vertically.
+  // Keep the active pill in view, but scroll ONLY the timeline container.
+  // scrollIntoView() is not usable here: it scrolls every scrollable
+  // ancestor, including the window, and the timeline sits above the feed —
+  // so each change of active post dragged the reader back to the top of the
+  // page and the feed could not be scrolled at all on mobile.
   useEffect(() => {
     const el = activeId ? linkRefs.current[activeId] : null;
-    if (el && typeof el.scrollIntoView === 'function') {
-      el.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center',
-      });
-    }
+    const scroller = navRef.current;
+    if (!el || !scroller) return;
+    // Desktop is a vertical list with nothing to scroll.
+    if (scroller.scrollWidth <= scroller.clientWidth + 1) return;
+    const sRect = scroller.getBoundingClientRect();
+    const eRect = el.getBoundingClientRect();
+    const target =
+      scroller.scrollLeft +
+      (eRect.left - sRect.left) -
+      (scroller.clientWidth - eRect.width) / 2;
+    scroller.scrollTo({left: Math.max(0, target), behavior: 'smooth'});
   }, [activeId]);
 
   useEffect(() => {
@@ -80,7 +87,7 @@ function TimelineSidebar({items, isParrotBlog}) {
   };
 
   return (
-    <aside className="blog-timeline">
+    <aside className="blog-timeline" ref={navRef}>
       <div className="blog-timeline__header">
         <span className="blog-timeline__indicator" />
         <span className="blog-timeline__label">
