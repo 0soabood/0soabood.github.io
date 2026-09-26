@@ -368,8 +368,14 @@ table {
   border-spacing: 0;
   border: 1px solid var(--separator-color);
   border-radius: var(--ifm-global-radius);
-  overflow: hidden;
   width: 100%;
+  /* Infima ships `table{display:block;overflow:auto}` so wide tables can
+     scroll. A bare `overflow:hidden` here won the cascade and instead
+     CLIPPED them — on a 390px screen a 602px-wide table lost columns
+     with no way to reach them. `overflow-x:auto` still clips at the
+     rounded corners, so the visual effect is unchanged. */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 th {
@@ -855,7 +861,11 @@ img {
     overflow-x: hidden;
   }
 
-  .unified-blog__feed .markdown pre {
+  /* Post pages render through the theme's own layout (no .markdown wrapper,
+     no .unified-blog__feed), so they need the same mobile treatment or code
+     blocks sit wider than the column and scroll sideways inside the article. */
+  .unified-blog__feed .markdown pre,
+  .blog-wrapper.blog-post-page pre {
     max-width: 100%;
     overflow-x: auto;
     white-space: pre-wrap;
@@ -887,15 +897,26 @@ img {
   .blog-timeline__nav {
     display: flex;
     flex-direction: row;
-    gap: 0.25rem;
+    gap: 0.4rem;
+    scroll-snap-type: x proximity;
   }
 
+  /* These pills MUST be width-bounded. Unbounded, each one grew to the
+     full width of its post title (342-577px inside a 358px viewport), so
+     the nav became an ~11,000px ribbon where a single pill did not even
+     fit on screen and the active post could not be found. */
   .blog-timeline__link {
+    display: inline-flex;
+    align-items: center;
     flex-shrink: 0;
-    padding: 0.35rem 0.7rem;
+    max-width: 66vw;
+    min-height: 44px;
+    padding: 0.5rem 0.9rem;
     border-radius: 999px;
     border: 1px solid #2a2a2a;
-    font-size: 0.72rem;
+    font-size: 0.78rem;
+    scroll-snap-align: start;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .blog-timeline__link.is-active {
@@ -914,6 +935,16 @@ img {
   .blog-timeline__header {
     display: none;
   }
+}
+
+/* Truncation is needed at EVERY width, not just desktop. It used to live
+   only inside the min-width:769px block, which is why the mobile pills grew
+   to their full title width. min-width:0 lets a flex child actually shrink. */
+.blog-timeline__title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* ===================== BLOG TIMELINE SIDEBAR (DESKTOP) ===================== */
@@ -1464,5 +1495,238 @@ img {
 
   .hbt-help {
     display: none;
+  }
+}
+
+/* ===================== ABOUT PAGE ===================== */
+/* The about page is plain MDX (no swizzled layout), so it carries its own
+   scoped styles to match the terminal aesthetic of the blog landing pages. */
+.about-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', monospace;
+  color: #e0e0e0;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.about-hero__prompt {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7a7a7a;
+}
+
+.about-hero__prompt::before {
+  content: '~/';
+  color: #00ff00;
+}
+
+.about-hero__title {
+  margin: 0.5rem 0 0.75rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #00ff00;
+  text-shadow: 0 0 16px rgba(0, 255, 0, 0.45);
+}
+
+.about-hero__tagline {
+  max-width: 34rem;
+  margin: 0 auto 1.25rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #c4c4c4;
+}
+
+.about-hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  color: #8a8a8a;
+}
+
+.about-hero__dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00ff00;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+  animation: about-pulse 2s ease-in-out infinite;
+}
+
+@keyframes about-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.about-section {
+  margin-bottom: 2.75rem;
+}
+
+.about-section__title {
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid #2a2a2a;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #7a7a7a;
+}
+
+.about-section__title::before {
+  content: '$ ';
+  color: #00ff00;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.about-card {
+  padding: 1.15rem;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+}
+
+.about-card__label {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #00ff00;
+}
+
+.about-card__body {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+}
+
+.about-projects {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-project {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px dashed #222;
+}
+
+.about-project:last-child {
+  border-bottom: none;
+}
+
+.about-project__link {
+  align-self: start;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #00ff00;
+  text-decoration: none;
+}
+
+.about-project__link.as-text {
+  color: #e0e0e0;
+}
+
+.about-project__link:hover {
+  text-decoration: underline;
+}
+
+.about-project__desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+}
+
+.about-para {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #b0b0b0;
+}
+
+.about-para a {
+  color: #8bff8b;
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.about-links a:hover {
+  border-color: #00ff00;
+  color: #00ff00;
+}
+
+.about-links__hint {
+  font-size: 0.72rem;
+  color: #6a6a6a;
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .about-hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-hero__title {
+    font-size: 2rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack the project name above its description — a fixed 200px label
+     column leaves too little room for the text on a phone. */
+  .about-project {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .about-links {
+    flex-direction: column;
+  }
+
+  .about-links a {
+    justify-content: space-between;
   }
 }

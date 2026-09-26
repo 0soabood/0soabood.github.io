@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -23,6 +23,21 @@ function getBlogCount(blogData, fallback) {
 
 function TimelineSidebar({items, isParrotBlog}) {
   const [activeId, setActiveId] = useState(null);
+  const linkRefs = useRef({});
+
+  // Keep the active pill in view. On mobile this nav scrolls horizontally, so
+  // the post you are reading can be far off-screen with no visual feedback.
+  // block:'nearest' prevents this from yanking the page vertically.
+  useEffect(() => {
+    const el = activeId ? linkRefs.current[activeId] : null;
+    if (el && typeof el.scrollIntoView === 'function') {
+      el.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center',
+      });
+    }
+  }, [activeId]);
 
   useEffect(() => {
     const anchors = items
@@ -83,6 +98,9 @@ function TimelineSidebar({items, isParrotBlog}) {
           return (
             <a
               key={id}
+              ref={(el) => {
+                linkRefs.current[id] = el;
+              }}
               href={`#${id}`}
               onClick={(e) => handleClick(e, id)}
               className={clsx('blog-timeline__link', isActive && 'is-active')}>
