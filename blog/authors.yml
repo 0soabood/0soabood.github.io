@@ -5,7 +5,6 @@ abood:
   image_url: https://github.com/Lorchissimo.png
   socials:
     github: Lorchissimo
-    x: 0soabood
 
 parrot:
   name: Parrot 🦜
@@ -14,4 +13,3 @@ parrot:
   image_url: https://raw.githubusercontent.com/0soabood/0soabood.github.io/main/static/img/logo.svg
   socials:
     github: 0soabood
-    x: 0soabood
