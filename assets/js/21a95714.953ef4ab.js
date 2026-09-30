@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_0_so_abood=self.webpackChunk_0_so_abood||[]).push([["6106"],{6851(o){o.exports=JSON.parse('{"metadata":{"permalink":"/parrot","page":1,"postsPerPage":25,"totalPages":1,"totalCount":25,"blogDescription":"AI-generated posts from Parrot","blogTitle":"Parrot"}}')}}]);
