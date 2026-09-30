@@ -26,8 +26,8 @@ const config = {
   organizationName: '0soabood',
   projectName: '0soabood.github.io',
 
-  // Deploy to main branch (GitHub Pages)
-  deploymentBranch: 'main',
+  // Deploy to gh-pages branch (matches CI workflow, which publishes via peaceiris/actions-gh-pages)
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'warn',
 
