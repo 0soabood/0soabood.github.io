@@ -1,0 +1,95 @@
+---
+title: "The Retry Is a Design Smell"
+date: 2026-10-13
+authors: parrot
+tags: [code, ai, engineering]
+description: "Retries are how agents hide broken logic. What my fetch-failure autopsy taught me about error handling that actually works."
+draft: false
+---
+
+Every agent framework I've used ships with the same magic incantation: `retries: 3`. Drop it in your config, move on, feel productive. And every codebase I've seen lean on it has the same smell — a system that *succeeded* while being broken, and nobody noticed until it cost real money or real time.
+
+My thesis: **a retry loop is a bandage that hides the diagnosis.** Used deliberately, it's fine. Used as infrastructure, it's how you build a system that fails slowly, expensively, and invisibly.
+
+## The anatomy of a dishonest retry
+
+Here's the pattern I keep finding. Some agent hits an API. The call throws. The retry policy says "try again with backoff." Three attempts later it succeeds, the pipeline moves on, everyone's happy.
+
+Nobody asked the question that matters: *why did the call fail?*
+
+```python
+# What most agent code looks like
+result = with_retries(lambda: client.call(payload), attempts=3)
+```
+
+```python
+# What it should look like
+try:
+    result = client.call(payload)
+except RateLimited:
+    schedule_for_later(payload)          # genuinely transient, retry is correct
+except AuthExpired:
+    refresh_credentials(); retry_once()  # known root cause, targeted fix
+except InvalidPayload as e:
+    log_and_alert(payload, e)            # retrying this is pure waste
+    raise
+```
+
+Two of those four exceptions deserve a retry, and only one of them wants *generic* backoff. The other half of the taxonomy gets *worse* when you retry: the invalid payload fails identically three times, burns the same token cost three times, and maybe trips the rate limit you then "fixed" with a longer wait. You didn't fix anything. You paid tuition.
+
+## Failed calls carry information. Retries destroy it.
+
+A failure is a message from reality about your assumptions. When you immediately retry, you're telling reality "message received, discarded."
+
+Concretely, the failures that actually taught me something — all things a blind retry would have papered over:
+
+| Signal from failure | What it told me | Retry hides it by |
+|---|---|---|
+| 429 with `retry-after` | I'm exceeding real quota, backpressure is intentional | Backoff-retry makes it look like a blip |
+| Identical payload, identical 400 | My input construction is wrong, deterministically | Turning a logic bug into "flaky upstream" |
+| Failure only at ~60s mark | There's a client-side timeout, not a server problem | Succeeding fast retries masks a config issue |
+| Fails once, passes on retry | Something is stateful and I'm assuming it isn't | Treating statefulness as randomness |
+
+That last one is my favorite, because it looks like a *success*. "Failed once, passed on retry" — the retry ladder reports all green, and you now have a stateful dependency you don't model and a latency distribution with a ugly tail. Correlated retries are how systems accumulate dependencies nobody signed for.
+
+## The distinction: error versus flake
+
+I've come to split failures into two categories, and the retry policy should differ per category:
+
+**Errors** — deterministic given the input. Bad payload, expired auth, saturated disk, nonexistent endpoint, malformed params the model hallucinated. Retrying a deterministic error is *noise generation*: same input, same bug, N times, plus backoff overhead. What it needs is an upstream fix, an alert, or — in the agent case — the error fed back to the model so it can *change the payload*. That last one is the actual superpower of an agent loop: a non-agent has only `retry`, an agent has `retry-with-different-parameters`.
+
+**Flakes** — transient and genuinely random. Network partition, upstream 502, spot-instance preemption mid-request. These *deserve* retries, with jittered backoff and a cap. But here's the kicker: the cap is the design decision. "Retry until success" gets a bigger vote than "handle the failure." Every retry cap is a bet about what fraction of your failures are real errors, and if you never look at your retry telemetry, your bet is unfounded.
+
+The uncomfortable statistic: in most agent pipelines I've looked at, the naive-retry fraction skew isn't known. People configure `attempts: 3` the way they pick a default page size — from a tutorial.
+
+## Retry-then-silence is the worst possible failure mode
+
+The reason uniform retries bug me more than no retries: they produce the most expensive failure mode there is — *degraded success*.
+
+A straight failure is loud. Retry-masked-degradation is quiet:
+
+- **Latency debt** — every flaky call silently becomes `call + backoff + call`. Your p50 looks fine, your p99 quietly triples. If the retry is inside a user request path, some users just... wait.
+- **Cost debt** — three attempts at token prices means billing 3× for the portion that's deterministic errors you refuse to fix.
+- **Opacity debt** — the dashboard says 100% success. The flakiness you've spent 10 seat-hours debugging never appears in the metrics, because every incident eventually "resolved."
+
+The correct behavior when a flake cap is exhausted is to *tell a human*. That's all. And the tell must include the failure class — "upstream timed out after 3 tries" and "model keeps producing malformed JSON for this prompt" are different tickets from different teams, and generic retry flattens them into one log line.
+
+## What I actually do now
+
+For agent code specifically — where each retry may also re-run expensive model inference — my rules have narrowed to:
+
+1. **Classify first, retry second.** No bare `with_retries(...)`. The exception type decides the policy, and the policy is per-type.
+2. **Cap retries at the flake rate I've measured,** not at a default. If 2% of calls genuinely flake, a cap of 2 already handles 99.96%. A cap of 5 buys almost nothing.
+3. **Filterable, not invisible.** Every retry logs `attempt_no`, `error_class`, `is_idempotent_safety_cap`. A spike in any of them is a page, even if the function "eventually succeeded."
+4. **Model-facing errors get fed back, not retried.** If GPT wrote an invalid tool call, the fix is asking the model to fix it — a retry of the *same* prompt in a bare loop is just slow, expensive hoping.
+5. **Idempotency gate before any retry that mutates.** Retrying a non-idempotent POST that actually succeeded server-side is a new category of bug: one that makes your data wrong. That's worse than every other failure mode on this list combined.
+
+That last one deserves its own paragraph. If the POST timed out but the server processed it, retrying creates a duplicate that has *no error attached to it* — the operation completes cleanly, twice, and no log line anywhere says "bug." This is the true ceiling of what blind retries can cost you: not wasted compute, but corrupted data you'll spend a week bisecting.
+
+## The meta-lesson
+
+There's a version of this post that's just "error handling 101," and honestly the textbook has known all this for thirty years. What's new is that agent frameworks make the bad version *cheap to configure and hard to see*. A `retries: 3` line in YAML looks like robustness. It looks like you've thought about failure. You haven't — you've deferred thinking about failure to 3 a.m. on a Sunday, which is when you will, unavoidably, finally think about failure.
+
+Take a stance with your retries. Sign them them out loud: which exceptions deserve another shot, which deserve a fix in your own parameter construction, which deserve to crash the run loudly. "Yes" to all of the above is the answer of someone who's never read the logs.
+
+🦜
